@@ -1,0 +1,420 @@
+@font-face {
+    font-family: "FuturaSP";
+    src: url("../assets/fonts/futuraspecial/futurasp.woff2") format("woff2"),
+        url("../assets/fonts/futuraspecial/futurasp.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../assets/fonts/roboto-v19-latin/roboto-v19-latin-regular.woff2') format('woff2'),
+        url('../assets/fonts/roboto-v19-latin/roboto-v19-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    src: url('../assets/fonts/roboto-v19-latin/roboto-v19-latin-900.woff2') format('woff2'),
+        url('../assets/fonts/roboto-v19-latin/roboto-v19-latin-900.woff') format('woff');
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: inherit;
+}
+
+main {
+    font-family: "Roboto", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.8;
+}
+
+::-webkit-scrollbar{
+    display:hidden;
+}
+
+.lime {
+    color: #c4ee00;
+}
+
+.pink {
+    color: #f40c67;
+}
+
+.hidden {
+    display: none;
+}
+
+.pagetitle--home {
+    background-image: url(../assets/img/title.svg);
+    background-repeat: no-repeat;
+    grid-area: title;
+}
+
+.header--home {
+    display: grid;
+    grid-template-columns: 1fr 510px 100px 710px 1fr;
+    grid-template-rows: 724px 18px 10px 45px;
+    grid-template-areas:
+        ". title . nathan ."
+        ". . . nathan ."
+        ". . . . ."
+        ". navbar navbar navbar .";
+}
+
+.menu--home {
+    grid-area: navbar;
+    margin-top: 2rem;
+}
+
+.landingimage {
+    grid-area: nathan;
+}
+
+.menu__items {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.menu__link {
+    position: relative;
+    font-family: "FuturaSP";
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #2D2D2D;
+    font-size: 3rem;
+}
+
+.menu__link span {
+    position: relative;
+    z-index: 1;
+}
+
+.active::before {
+    display: block;
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;;
+    background-color: #c4ee00;
+    transform: translateX(0.7rem) translateY(0.7rem);
+}
+
+.menu {
+    margin-top: 4rem;
+}
+
+.event {
+    width: 53rem;
+    height: 60rem;
+    display: grid;
+    grid-template-areas:
+        "date time image"
+        "title title image"
+        "desc desc image"
+        ". . image"
+        "kind . image";
+}
+
+.event__date {
+    grid-area: date;
+    padding-top: 2rem;
+}
+
+.event__time {
+    grid-column: 3;
+    grid-row: 1;
+    padding-top: 2rem;
+    transform: translateX(8rem)
+}
+
+.event__title {
+    grid-area: title;
+    font-family: "FuturaSP";
+    text-transform: uppercase;
+    font-size: 4rem;
+    line-height: 6rem;
+    margin-top: 2rem;
+    width: 32rem;
+}
+
+.event__description {
+    grid-area: desc;
+    margin-top: 2rem;
+}
+
+.event__description a {
+    font-weight: 900;
+}
+
+.event__kind {
+    grid-area: kind;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.event__image {
+    grid-area: image;
+    background-color: none;
+    margin-left: -1.5rem;
+}
+
+.pinkevent {
+    background-color: #f40c67;
+    color: white;
+}
+
+.limeevent {
+    background-color: #c4ee00;
+    color: #2D2D2D;
+}
+
+.greyevent {
+    background-color: #2D2D2D;
+    color: white;
+}
+
+.events__container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start space-around;
+}
+
+.events__container article {
+    margin-left: 7vw;
+    margin-bottom: 10rem;
+}
+
+.events__container article:nth-child(2n) {
+    margin-left: 14vw;
+}
+
+.page__title {
+    font-family: "FuturaSP";
+    text-transform: uppercase;
+    font-size: 12rem;
+    color: white;
+    -webkit-text-stroke-width: 0.2rem;
+    -webkit-text-stroke-color: black;
+    padding-left: 12rem;
+    color: transparent;
+}
+
+.event li {
+    padding-left: 3rem;
+}
+
+.detail__title {
+    font-family: "FuturaSP";
+    text-transform: uppercase;
+    font-size: 4rem;
+    line-height: 6rem;
+    margin-bottom: 3rem;
+}
+
+.detail__container {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: -12rem;
+}
+
+.detailpage {
+    margin-top: -11rem;
+}
+
+.detail {
+    margin-top: 12rem;
+    margin-left: -6rem;
+}
+
+.page__title--detailpage {
+    margin-left: 12.3rem;
+    margin-top: 12rem;
+}
+
+.detail__image {
+    height: 63.3rem;
+    z-index: -1;
+}
+
+.detail__tickets--button {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: white;
+    background-color: #2D2D2D;
+    padding: 1rem 10rem 1rem 10rem;
+    text-decoration: none;
+    border-radius: 3rem;
+    text-transform: capitalize;
+}
+
+.detail__tickets--title {
+    font-family: "FuturaSP";
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+.detail__description {
+    width: 60rem;
+    margin-bottom: 3rem;
+}
+
+.detail__tickets--text {
+    margin-bottom: 3rem;
+}
+
+.filter {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-left: 12rem;
+    margin-bottom: 6rem;
+}
+
+.filter__label {
+    border: #2D2D2D solid 0.2rem;
+    padding: 1rem 2.5rem 1rem 2.5rem;
+    margin-left: 1rem;
+    text-transform: capitalize;
+}
+
+.filter__label--active {
+    background-color: #2D2D2D;
+    color: white;
+}
+
+.filter__submit {
+    font-family: "Roboto";
+    font-weight: 400;
+    color: white;
+    background-color: #2D2D2D;
+    padding: 1rem 5rem 1rem 5rem;
+    text-decoration: none;
+    border-radius: 3rem;
+    text-transform: capitalize;
+    margin-left: 1rem;
+    font-size: 1.8rem;
+}
+
+.filter__title {
+    font-family: "FuturaSP";
+    text-transform: uppercase;
+    font-size: 2rem;
+    color: #2D2D2D;
+}
+
+.filter__title::after {
+    content: ":";
+}
+
+.about__about p {
+    font-size: 2.5rem;
+    line-height: 2.2;
+    font-weight: 900;
+    margin-top: -15rem;
+    margin-right: 8rem;
+    color: #2D2D2D;
+}
+
+.about__container article {
+    margin: 0 12rem 8rem 12rem;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about__where p {
+    font-size: 2.5rem;
+    line-height: 2.2;
+    font-weight: 900;
+    margin-right: 8rem;
+    color: #2D2D2D;
+}
+
+.about__history p {
+    font-size: 2.5rem;
+    line-height: 2.2;
+    font-weight: 900;
+    margin-left: 8rem;
+    color: #2D2D2D;
+}
+
+.page__title--checkoutpage {
+    margin-left: 16rem;
+    margin-top: 12rem;
+    z-index: 0;
+}
+
+.checkoutcontainer {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: -12rem;
+    z-index: -1;
+}
+
+.checkout {
+    margin-top: -12rem;
+}
+
+.checkoutcontainer__blockone img{
+    height: 64rem;
+    z-index: -1;
+    position: relative;
+}
+
+.checkoutcontainer__blocktwo {
+    z-index: 2;
+    margin-top: 20rem;
+    margin-left: -10rem;
+}
+
+.checkoutcontainer__blocktwo .button{
+    font-family: "Roboto";
+    font-weight: 400;
+    color: white;
+    background-color: #2D2D2D;
+    padding: 1rem 10rem 1rem 10rem;
+    text-decoration: none;
+    border-radius: 3rem;
+    text-transform: capitalize;
+    margin-top: 2rem;
+}
+
+.error {
+    color: red;
+}
+
+.field-wrapper label{
+    display: flex;
+    flex-flow: column;
+    margin-top: 2rem;
+}
+
+.field-wrapper .input-label {
+    font-family: "FuturaSP";
+    text-transform: uppercase;
+    color: #2D2D2D;
+}
+    
+.tickets__title {
+    font-family: "Roboto";
+    font-size: 2rem;
+}
